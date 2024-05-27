@@ -39,10 +39,10 @@ export default function HeroClient({ post }: { post: Doc }) {
 
   return (
     <section id="hero">
-      <div className="relative h-full overflow-hidden py-14">
-        <div className="container z-10 flex flex-col">
-          <div className="mt-20 grid grid-cols-1">
-            <div className="flex flex-col items-center gap-6 pb-8 text-center">
+      <div className="relative h-full overflow-hidden py-5 md:py-14">
+        <div className="z-10 flex flex-col">
+          <div className="mt-10 grid grid-cols-1 md:mt-20">
+            <div className="flex flex-col items-start gap-6 px-7 pb-8 text-center md:items-center md:px-10">
               <motion.div
                 ref={fadeInRef}
                 animate={fadeInInView ? "animate" : "initial"}
@@ -63,7 +63,7 @@ export default function HeroClient({ post }: { post: Doc }) {
                         `p-[1px] ![mask-composite:subtract]`,
                       )}
                     />
-                    🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
+
                     <span
                       className={cn(
                         `animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
@@ -77,25 +77,29 @@ export default function HeroClient({ post }: { post: Doc }) {
                 </Link>
               </motion.div>
 
-              <motion.h1
-                animate={fadeInInView ? "animate" : "initial"}
-                variants={fadeUpVariants}
-                initial={false}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.1,
-                  ease: [0.21, 0.47, 0.32, 0.98],
-                  type: "spring",
-                }}
-                className="text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-6 text-5xl font-semibold leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-7xl"
-              >
-                UI library for Design Engineers
-                {/* React components to build
-                <br className="hidden md:block" /> beautiful landing pages. */}
-              </motion.h1>
+              <div className="relative flex flex-col gap-4 md:items-center lg:flex-row">
+                <motion.h1
+                  animate={fadeInInView ? "animate" : "initial"}
+                  variants={fadeUpVariants}
+                  initial={false}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.1,
+                    ease: [0.21, 0.47, 0.32, 0.98],
+                    type: "spring",
+                  }}
+                  className="relative mx-0 max-w-[43.5rem] text-balance py-2 text-left text-5xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-7xl md:mx-auto md:px-4 md:text-center md:text-7xl lg:text-7xl"
+                >
+                  UI library for Design Engineers
+                </motion.h1>
+                <span className="bg-backdrop-blur-sm text-neutral-90 absolute left-5 top-12 z-10 hidden -rotate-6 rounded-full border border-neutral-400 bg-neutral-800/10 px-2 py-1 text-xs/relaxed font-normal dark:border-white dark:bg-white/10 dark:text-white md:block">
+                  {" "}
+                  100% open-source
+                </span>
+              </div>
 
               <motion.p
-                className="max-w-[64rem] text-balance text-lg tracking-tight text-gray-500 md:text-xl"
+                className="max-w-xl text-balance text-left text-base tracking-tight text-neutral-800 dark:font-medium dark:text-neutral-400 md:text-center md:text-lg "
                 animate={fadeInInView ? "animate" : "initial"}
                 variants={fadeUpVariants}
                 initial={false}
@@ -107,17 +111,29 @@ export default function HeroClient({ post }: { post: Doc }) {
                 }}
               >
                 20+ free and open-source animated components built with{" "}
-                <strong>React</strong>, <strong>Typescript</strong>,{" "}
-                <strong>Tailwind CSS</strong>, and{" "}
-                <strong>Framer Motion</strong>.
+                <span className="font-bold text-neutral-800 dark:text-neutral-100">
+                  React
+                </span>
+                ,{" "}
+                <span className="font-bold text-neutral-800 dark:text-neutral-100">
+                  Typescript
+                </span>
+                ,{" "}
+                <span className="font-bold text-neutral-800 dark:text-neutral-100">
+                  Tailwind CSS
+                </span>
+                , and{" "}
+                <span className="font-bold text-neutral-800 dark:text-neutral-100">
+                  Framer Motion
+                </span>
+                .
                 <br />
-                100% open-source, and customizable.
               </motion.p>
 
               <motion.div
                 animate={fadeInInView ? "animate" : "initial"}
                 variants={fadeUpVariants}
-                className="flex flex-col gap-4 lg:flex-row"
+                className="mx-0 flex w-full max-w-full flex-col gap-4 py-1 sm:max-w-lg sm:flex-row md:mx-auto"
                 initial={false}
                 transition={{
                   duration: 0.6,
@@ -126,16 +142,16 @@ export default function HeroClient({ post }: { post: Doc }) {
                   type: "spring",
                 }}
               >
-                <div className="flex flex-col gap-4 md:flex-row">
+                <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
                   <Link
-                    href="/components"
+                    href="/"
                     className={cn(
                       buttonVariants({
                         variant: "default",
                         size: "lg",
                       }),
                       "gap-2 whitespace-pre md:flex",
-                      "group relative w-full gap-1 rounded-full text-sm font-semibold tracking-tighter",
+                      "group relative w-full gap-1 rounded-full text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
                     )}
                   >
                     Browse Components
@@ -146,10 +162,10 @@ export default function HeroClient({ post }: { post: Doc }) {
                     className={cn(
                       buttonVariants({
                         size: "lg",
-                        variant: "ghost",
+                        variant: "outline",
                       }),
                       "gap-2 whitespace-pre md:flex",
-                      "group relative w-full gap-1 overflow-hidden rounded-full text-sm font-semibold tracking-tighter",
+                      "group relative w-full gap-1 overflow-hidden rounded-full text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-neutral-800 dark:hover:ring-offset-black ",
                     )}
                   >
                     Get Started
@@ -218,7 +234,7 @@ export default function HeroClient({ post }: { post: Doc }) {
           </div>
 
           <motion.div
-            className="relative mx-auto flex w-full max-w-[1000px] items-center justify-center"
+            className="relative mx-auto flex w-full max-w-[16rem] items-center justify-center"
             animate={fadeInInView ? "animate" : "initial"}
             variants={fadeUpVariants}
             initial={false}
@@ -230,7 +246,7 @@ export default function HeroClient({ post }: { post: Doc }) {
             }}
           >
             <TechStack
-              className="mx-auto text-foreground"
+              className="mx-auto flex w-full items-center justify-between"
               technologies={[
                 // "nextjs",
                 "react",
@@ -241,6 +257,14 @@ export default function HeroClient({ post }: { post: Doc }) {
               ]}
             />
           </motion.div>
+
+          {/*      <div className="relative flex h-full w-full rotate-6 py-20">
+            <VelocityScroll
+              text="Magic UI"
+              default_velocity={2}
+              className="bg-gradient-to-tr from-neutral-200 via-neutral-100 to-neutral-50 bg-clip-text py-2 text-center text-4xl font-bold tracking-tighter text-transparent [-webkit-text-stroke:0.7px_rgba(0,0,0,0.2)] dark:from-neutral-900 dark:via-neutral-950 dark:to-black dark:[-webkit-text-stroke:0.7px_rgba(255,255,255,0.2)] md:text-7xl md:leading-[5rem] md:[-webkit-text-stroke:1.11px_rgba(0,0,0,0.2)] dark:md:[-webkit-text-stroke:1.11px_rgba(255,255,255,0.2)]"
+            />
+          </div> */}
 
           <div className="container relative mx-auto mt-32 w-full max-w-[1000px]">
             <motion.span

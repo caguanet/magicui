@@ -25,11 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      </head>
       <body
         className={cn(
-          "relative flex min-h-screen w-full flex-col justify-center overflow-x-hidden scroll-smooth bg-background antialiased",
-          fontSans.className,
+          "relative flex min-h-screen w-full flex-col justify-center overflow-x-hidden scroll-smooth bg-neutral-50 antialiased dark:bg-[#070708]",
         )}
       >
         <PHProvider>

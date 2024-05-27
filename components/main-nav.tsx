@@ -14,12 +14,16 @@ export function MainNav() {
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-6 flex items-center space-x-2">
+      <Link href="/" className="relative mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold md:inline-block">
           {siteConfig.name}
         </span>
         <Badge variant="secondary">Beta</Badge>
+        <Badge className="text-neutral-90 absolute left-0 top-10 z-10 -rotate-6 rounded-full border border-neutral-300/30 bg-neutral-100/80 text-xs/relaxed font-normal backdrop-blur-xl dark:border-neutral-700/30 dark:bg-neutral-800/80 dark:text-white">
+          {" "}
+          100% open-source
+        </Badge>
       </Link>
       <nav className="hidden items-center space-x-6 text-sm font-medium xl:flex">
         {docsConfig.mainNav.map((item) => (

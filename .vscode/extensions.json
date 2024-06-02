@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "yuzu.snippets-next-13",
+    "dsznajder.es7-react-js-snippets",
+    "burkeholland.simple-react-snippets",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "PKief.material-icon-theme",
+    "DaltonMenezes.aura-theme",
+    "github.copilot-chat",
+    "ms-azuretools.vscode-docker",
+    "mhutchie.git-graph",
+    "github.copilot",
+    "quicktype.quicktype",
+    "snyk-security.snyk-vulnerability-scanner",
+    "ms-ceintl.vscode-language-pack-es",
+    "googlecloudtools.cloudcode"
+  ]
+}
